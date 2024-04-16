@@ -1,7 +1,7 @@
 # Maintainer: maple
 pkgname=wl-clip-persist
-pkgver=0.3.1
-pkgrel=3
+pkgver=0.4.0
+pkgrel=1
 pkgdesc="Keep Wayland clipboard even after programs close"
 arch=('any')
 url="https://github.com/Linus789/wl-clip-persist"
