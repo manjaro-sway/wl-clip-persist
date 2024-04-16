@@ -1,6 +1,6 @@
 # Maintainer: maple
-pkgname=wl-clip-persist-git
-pkgver=0.4.0.r0.g5b1ba6f
+pkgname=wl-clip-persist
+pkgver=0.4.0
 pkgrel=1
 pkgdesc="Keep Wayland clipboard even after programs close"
 arch=('any')
@@ -8,14 +8,10 @@ url="https://github.com/Linus789/wl-clip-persist"
 license=('MIT')
 provides=('wl-clip-persist')
 conflicts=('wl-clip-persist')
-makedepends=('git' 'cargo')
-source=("$pkgname::git+https://github.com/Linus789/wl-clip-persist.git")
+depends=('wayland')
+makedepends=('git' 'cargo' 'wayland-protocols')
+source=("$pkgname::git+https://github.com/Linus789/wl-clip-persist.git#commit=6ba11a2aa295d780f0b2e8f005cf176601d153b0")
 sha256sums=('SKIP')
-
-pkgver() {
-  cd "$pkgname"
-  git describe --long --tags --abbrev=7 | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}
 
 prepare() {
   cd "$pkgname"
